@@ -1,0 +1,10 @@
+08/20/2023 05:33:25 am model_name: cnn2_L3_50_all 
+                 num_params: 52511 
+                 best_epoch: 20 
+                 test_loss: 0.052402184780091586 
+                 max_auc: 0.9275218995845368 
+                 netName: model.cnn2_L3_50 
+                 batch_size: 1 
+                  train_epochs: 50 
+                 learning_rate: 5e-05 
+

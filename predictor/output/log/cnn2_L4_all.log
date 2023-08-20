@@ -1,0 +1,20 @@
+08/19/2023 06:42:05 am model_name: cnn2_L4_all 
+                 num_params: 52031 
+                 best_epoch: 30 
+                 test_loss: 0.05311405195228558 
+                 max_auc: 0.9267691387570243 
+                 netName: model.cnn2_L4 
+                 batch_size: 1 
+                  train_epochs: 50 
+                 learning_rate: 5e-05 
+
+08/20/2023 06:30:11 am model_name: cnn2_L4_all 
+                 num_params: 54601 
+                 best_epoch: 20 
+                 test_loss: 0.0540149095400295 
+                 max_auc: 0.9280663124932627 
+                 netName: model.cnn2_L4 
+                 batch_size: 1 
+                  train_epochs: 50 
+                 learning_rate: 5e-05 
+

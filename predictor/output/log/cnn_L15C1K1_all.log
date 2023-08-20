@@ -1,0 +1,10 @@
+08/17/2023 12:08:45 am model_name: cnn_L15C1K1_all 
+                 num_params: 1055 
+                 best_epoch: 1 
+                 test_loss: 0.13520040904298383 
+                 max_auc: 0.5 
+                 netName: model.cnn_L15C1K1 
+                 batch_size: 1 
+                  train_epochs: 100 
+                 learning_rate: 5e-05 
+
