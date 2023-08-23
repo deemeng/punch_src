@@ -37,3 +37,5 @@ path_IDRdataset_smoothed = os.path.join(path_dataset, 'IDRdataset_smoothed.json'
 path_features = os.path.join(path_data, 'features')
 
 path_embedded_protTrans = os.path.join(path_features, 'protTrans')
+path_embedded_onehot = os.path.join(path_features, 'onehot')
+path_embedded_hmm = os.path.join(path_features, 'hmm')
