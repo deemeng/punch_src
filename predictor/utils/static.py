@@ -28,3 +28,7 @@ class type_dataset:
     @classmethod
     def get_info(cls, x):
         return cls.type_dataset_info[x]
+
+class protein_seq:
+    amino_acids = ['A', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'K', 'L',
+                   'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'Y', 'X']

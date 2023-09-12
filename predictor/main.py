@@ -71,8 +71,8 @@ if __name__ == '__main__':
     test_data = test_data[test_data['p_len']<=paramH.MAX_seq_length]
     
     # IDRDataset
-    train_disorder = IDRDataset(data=train_data, feature_root=paramF.path_features)
-    test_disorder = IDRDataset(data=test_data, feature_root=paramF.path_features)
+    train_disorder = IDRDataset(data=train_data, feature_root=paramF.path_features, feature_type=paramH.featureType)
+    test_disorder = IDRDataset(data=test_data, feature_root=paramF.path_features, feature_type=paramH.featureType)
 
     # Defining the dataloader for the training set and the test set
     train_loader = DataLoader(train_disorder, batch_size=paramH.batch_size, shuffle=True, num_workers=0, collate_fn=collate_fn,
@@ -163,7 +163,7 @@ if __name__ == '__main__':
     
     train_one_id = ['4E9M_1']
     test_one_data = train_data[train_data['id'].isin(train_one_id)]
-    test_one_disorder = IDRDataset(data=test_one_data, feature_root=paramF.path_features)
+    test_one_disorder = IDRDataset(data=test_one_data, feature_root=paramF.path_features, feature_type=paramH.featureType)
     sequence: Sequence = test_one_disorder[0]
     prediction = predict_one_sequence(net, sequence, device)
     for idx, (aa, pred) in enumerate(zip(sequence.sequence, prediction)):

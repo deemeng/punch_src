@@ -11,7 +11,7 @@ from torch.nn.utils.rnn import pack_padded_sequence, pad_packed_sequence, pad_se
 
 class Sequence:
     def __init__(self, seq_id, sequence, target, feature_path=None, data_transform=None,
-                 target_transform=None):
+                 target_transform=None, feature_type='plm'):
         
         self.seq_id = seq_id
         self.sequence = sequence
@@ -19,7 +19,12 @@ class Sequence:
             
         self.data_transform = data_transform
         self.target_transform = target_transform
-        self.plm_encoding = read_plm(os.path.join(feature_path, 'protTrans/{}.npy'.format(self.seq_id)))
+        if feature_type=='plm':
+            self.plm_encoding = read_plm(os.path.join(feature_path, 'protTrans/{}.npy'.format(self.seq_id)))
+        elif feature_type=='onehot':
+            self.plm_encoding = read_plm(os.path.join(feature_path, 'onehot/{}.npy'.format(self.seq_id)))
+        elif feature_type=='hmm':
+            self.plm_encoding = read_plm(os.path.join(feature_path, 'hmm/{}.npy'.format(self.seq_id)))
 
     @property
     def data(self):
@@ -55,20 +60,19 @@ class Sequence:
 
 # Base class for the two datasets, with common functionality
 class IDRDataset(Dataset):
-    def __init__(self, data, feature_root, transform=None, target_transform=None):
+    def __init__(self, data, feature_root, transform=None, target_transform=None, feature_type='plm'):
         self.transform = transform
         self.target_transform = target_transform
-
         self.raw_data = data
-
         self.feature_root = feature_root
+        self.feature_type = feature_type
 
     def __len__(self):
         return len(self.raw_data)
 
     def __getitem__(self, idx):
         seq_id, sequence, target, _ = self.raw_data.iloc[idx]
-        item = Sequence(seq_id, sequence, target, feature_path=self.feature_root,
+        item = Sequence(seq_id, sequence, target, feature_path=self.feature_root, feature_type=self.feature_type,
                                       data_transform=self.transform, target_transform=self.target_transform)
         return item
 
