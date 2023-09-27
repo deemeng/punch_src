@@ -36,7 +36,7 @@ def onehot_encoding(seq: str) -> np.array:
     
 def get_onehot_embedding(list_seq: list) -> list[np.array]:
     '''
-    Given a list of sequences, generate a list pf PLM embedding of these sequences. 
+    Given a list of sequences, generate a list of onehot embedding of these sequences. 
     
     params:
         list_seq - list of Uniprot sequences.
