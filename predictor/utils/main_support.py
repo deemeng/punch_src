@@ -30,7 +30,7 @@ def selectCol(df_train, df_test, datasetType):
     '''
     
     list_col = []
-    if datasetType==type_dataset.ALL or datasetType==type_dataset.IDRONLY:
+    if datasetType==type_dataset.ALL or datasetType==type_dataset.IDRONLY or type_dataset.ALL_FD:
         list_col = ['id', 'sequence', 'reference']
     elif datasetType==type_dataset.SMOOTH_ALL or datasetType==type_dataset.SMOOTH_IDRONLY:
         list_col = ['id', 'sequence', 'reference_smoothed']

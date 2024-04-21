@@ -1,0 +1,10 @@
+10/09/2023 05:31:42 pm model_name: rnn_L1H15_bi_all 
+                 num_params: 31261 
+                 best_epoch: 47 
+                 test_loss: 0.055264638341925146 
+                 max_auc: 0.9204529550061427 
+                 netName: model.rnn_L1H15_bi 
+                 batch_size: 1 
+                  train_epochs: 50 
+                 learning_rate: 5e-05 
+

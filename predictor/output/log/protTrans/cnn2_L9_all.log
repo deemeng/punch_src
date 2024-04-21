@@ -1,0 +1,20 @@
+09/14/2023 08:04:46 pm model_name: cnn2_L9_all 
+                 num_params: 174901 
+                 best_epoch: 8 
+                 test_loss: 0.053947426023733716 
+                 max_auc: 0.9321067588706624 
+                 netName: model.cnn2_L9 
+                 batch_size: 1 
+                  train_epochs: 50 
+                 learning_rate: 5e-05 
+
+09/14/2023 08:23:21 pm model_name: cnn2_L9_all 
+                 num_params: 174901 
+                 best_epoch: 6 
+                 test_loss: 0.053140996030938845 
+                 max_auc: 0.9318720395445542 
+                 netName: model.cnn2_L9 
+                 batch_size: 1 
+                  train_epochs: 9 
+                 learning_rate: 5e-05 
+

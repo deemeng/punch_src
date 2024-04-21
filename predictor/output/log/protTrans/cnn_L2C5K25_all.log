@@ -1,0 +1,10 @@
+09/13/2023 06:41:38 pm model_name: cnn_L2C5K25_all 
+                 num_params: 128011 
+                 best_epoch: 9 
+                 test_loss: 0.05237657613558499 
+                 max_auc: 0.9264350641748537 
+                 netName: model.cnn_L2C5K25 
+                 batch_size: 1 
+                  train_epochs: 100 
+                 learning_rate: 5e-05 
+

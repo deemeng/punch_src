@@ -17,12 +17,16 @@ class type_dataset:
     IDRONLY = 'idrOnly'
     SMOOTH_ALL = 'smooth_all'
     SMOOTH_IDRONLY = 'smooth_idrOnly'
+    ALL_FD = 'withFullyDisorder'
+    ALL_FD_78 = 'withFullyDisorder78'
     
     type_dataset_info = {
-        'all': 'no smoothing, all entities', 
+        'all': 'no smoothing, all 30% entities', 
         'idrOnly': 'no smoothing, only entities contain IDRs', 
         'smooth_all': 'smoothing, all entities', 
-        'smooth_idrOnly': 'smoothing, only entities contain IDRs'
+        'smooth_idrOnly': 'smoothing, only entities contain IDRs',
+        'withFullyDisorder': 'all 30% dataset + fully disordered sequences from Disprot',
+        'withFullyDisorder78': 'all 100% dataset + fully disordered sequences from Disprot'
     }
     
     @classmethod

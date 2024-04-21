@@ -1,0 +1,10 @@
+11/04/2023 08:35:42 am model_name: lstm_biL1H50_all 
+                 num_params: 29701 
+                 best_epoch: 128 
+                 test_loss: 0.06854223534464836 
+                 max_auc: 0.8907294971066823 
+                 netName: model.lstm_biL1H50 
+                 batch_size: 20 
+                  train_epochs: 200 
+                 learning_rate: 5e-05 
+

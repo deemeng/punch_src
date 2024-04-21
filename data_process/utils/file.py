@@ -11,6 +11,13 @@ csv.field_size_limit(sys.maxsize)
 ###
 # fileIO
 ###
+def save_tab(df: pd.DataFrame, file_path: str):
+    df.to_csv(file_path, index=False, sep='\t')
+    
+def load_tab(file_path: str) -> pd.DataFrame:
+    df = pd.read_csv(file_path, sep='\t')
+    return df
+    
 def save_np(arr: list, file_path: str):
     '''
     Save a list of numpy array to a file.
@@ -81,7 +88,15 @@ def download_pdbe_updatedCif(list_pdbid: list, path_pdbe_cif):
     for pdbid in list_pdbid:
         URL = f"https://www.ebi.ac.uk/pdbe/entry-files/download/{pdbid.lower()}_updated.cif"
         response = wget.download(URL, path_pdbe_cif)
-        
+
+def dump_dict2json(dictData: dict, path_json: str):
+    '''
+    Save a dictionary to a JSON file.
+    Note that JSON does not recognize Array or Numpy, change it to int or list!!
+    '''
+    with open(path_json, 'w') as fout:
+        json.dump(dictData, fout)
+
 def dump_list2json(listData: list, path_json: str):
     '''
     Save a dictionary to a JSON file.

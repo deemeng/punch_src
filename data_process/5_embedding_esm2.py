@@ -39,7 +39,7 @@ for entity in list_entity:
         results = model(batch_tokens, repr_layers=[33], return_contacts=True)
     token_representations = results["representations"][33]
 
-    embedded_seq = token_representations[0].numpy()
+    embedded_seq = token_representations[0, 1 : - 1].numpy()
     # save the embedding
     save_np(embedded_seq, os.path.join(path_embedded_esm2, f"{entity['id']}.npy"))
 

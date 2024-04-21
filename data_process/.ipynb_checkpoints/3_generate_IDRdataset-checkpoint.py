@@ -46,6 +46,6 @@ with open(paramsPDB.path_cls30Rep) as handle:
         entityData['sequence'] = str(seq_entity)
         entityData['reference'] = ''.join(str(x) for x in list_reference)
         list_entityDataset.append(entityData)
-print('Saving the dataset... ...')        
+print('Saving the dataset... ...')
 dump_list2json(list_entityDataset, paramsPDB.path_IDRdataset)
 print('Done!!!')

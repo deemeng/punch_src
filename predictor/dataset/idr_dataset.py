@@ -11,24 +11,75 @@ from torch.nn.utils.rnn import pack_padded_sequence, pad_packed_sequence, pad_se
 
 class Sequence:
     def __init__(self, seq_id, sequence, target, feature_path=None, data_transform=None,
-                 target_transform=None, feature_type='plm'):
-        
+                 target_transform=None, feature_type='protTrans'):
         self.seq_id = seq_id
         self.sequence = sequence
         self._target = parse_target(target)
             
         self.data_transform = data_transform
         self.target_transform = target_transform
-        if feature_type=='plm':
-            self.plm_encoding = read_plm(os.path.join(feature_path, 'protTrans/{}.npy'.format(self.seq_id)))
+        if feature_type=='protTrans':
+            self.seq_encoding = read_plm(os.path.join(feature_path, 'protTrans/{}.npy'.format(self.seq_id)))
         elif feature_type=='onehot':
-            self.plm_encoding = read_plm(os.path.join(feature_path, 'onehot/{}.npy'.format(self.seq_id)))
-        elif feature_type=='hmm':
-            self.plm_encoding = read_plm(os.path.join(feature_path, 'hmm/{}.npy'.format(self.seq_id)))
+            self.seq_encoding = read_plm(os.path.join(feature_path, 'onehot/{}.npy'.format(self.seq_id)))
+        elif feature_type=='hmm_prob':
+            self.seq_encoding = read_plm(os.path.join(feature_path, 'hmm/prob/{}.npy'.format(self.seq_id)))
+        elif feature_type=='hmm_aa':
+            self.seq_encoding = read_plm(os.path.join(feature_path, 'hmm/aa/{}.npy'.format(self.seq_id)))
+        elif feature_type=='hmm_prob_numTemp':
+            self.seq_encoding = read_plm(os.path.join(feature_path, 'hmm/prob_NumTemplate/{}.npy'.format(self.seq_id)))
+        elif feature_type=='hmm_aa_numTemp':
+            self.seq_encoding = read_plm(os.path.join(feature_path, 'hmm/aa_NumTemplate/{}.npy'.format(self.seq_id)))
+        elif feature_type=='esm2':
+            self.seq_encoding = read_plm(os.path.join(feature_path, 'esm2/{}.npy'.format(self.seq_id)), start_token=True, end_token=True)
+        elif feature_type=='msa_transformer':
+            self.seq_encoding = read_plm(os.path.join(feature_path, 'msaTrans/{}.npy'.format(self.seq_id)))
+        elif feature_type=='hmm_prob@onehot':
+            hmm_prob_encoding = read_plm(os.path.join(feature_path, 'hmm/prob/{}.npy'.format(self.seq_id)))
+            onehot_encoding = read_plm(os.path.join(feature_path, 'onehot/{}.npy'.format(self.seq_id)))
+            self.seq_encoding = torch.cat((hmm_prob_encoding.squeeze(0), onehot_encoding.squeeze(0)), dim=1)
+            self.seq_encoding = self.seq_encoding.unsqueeze(0)
+        elif feature_type=='hmm_prob_numTemp@onehot':
+            hmm_encoding = read_plm(os.path.join(feature_path, 'hmm/prob_NumTemplate/{}.npy'.format(self.seq_id)))
+            onehot_encoding = read_plm(os.path.join(feature_path, 'onehot/{}.npy'.format(self.seq_id)))
+            self.seq_encoding = torch.cat((hmm_encoding.squeeze(0), onehot_encoding.squeeze(0)), dim=1)
+            self.seq_encoding = self.seq_encoding.unsqueeze(0)
+        elif feature_type=='protTrans@onehot':
+            plm_encoding = read_plm(os.path.join(feature_path, 'protTrans/{}.npy'.format(self.seq_id)))
+            onehot_encoding = read_plm(os.path.join(feature_path, 'onehot/{}.npy'.format(self.seq_id)))
+            self.seq_encoding = torch.cat((plm_encoding.squeeze(0), onehot_encoding.squeeze(0)), dim=1)
+            self.seq_encoding = self.seq_encoding.unsqueeze(0)
+        elif feature_type=='esm2@onehot':
+            plm_encoding = read_plm(os.path.join(feature_path, 'esm2/{}.npy'.format(self.seq_id)), start_token=True, end_token=True)
+            onehot_encoding = read_plm(os.path.join(feature_path, 'onehot/{}.npy'.format(self.seq_id)))
+            self.seq_encoding = torch.cat((plm_encoding.squeeze(0), onehot_encoding.squeeze(0)), dim=1)
+            self.seq_encoding = self.seq_encoding.unsqueeze(0)
+        elif feature_type=='msa_transformer@onehot':
+            plm_encoding = read_plm(os.path.join(feature_path, 'msaTrans/{}.npy'.format(self.seq_id)))
+            onehot_encoding = read_plm(os.path.join(feature_path, 'onehot/{}.npy'.format(self.seq_id)))
+            self.seq_encoding = torch.cat((plm_encoding.squeeze(0), onehot_encoding.squeeze(0)), dim=1)
+            self.seq_encoding = self.seq_encoding.unsqueeze(0)
+        elif feature_type=='msa_transformer@hmm_prob_numTemp':
+            plm_encoding = read_plm(os.path.join(feature_path, 'msaTrans/{}.npy'.format(self.seq_id)))
+            hmm_encoding = read_plm(os.path.join(feature_path, 'hmm/prob_NumTemplate/{}.npy'.format(self.seq_id)))
+            self.seq_encoding = torch.cat((plm_encoding.squeeze(0), hmm_encoding.squeeze(0)), dim=1)
+            self.seq_encoding = self.seq_encoding.unsqueeze(0)
+        elif feature_type=='protTrans@hmm_prob_numTemp':
+            plm_encoding = read_plm(os.path.join(feature_path, 'protTrans/{}.npy'.format(self.seq_id)))
+            hmm_encoding = read_plm(os.path.join(feature_path, 'hmm/prob_NumTemplate/{}.npy'.format(self.seq_id)))
+            self.seq_encoding = torch.cat((plm_encoding.squeeze(0), hmm_encoding.squeeze(0)), dim=1)
+            self.seq_encoding = self.seq_encoding.unsqueeze(0)
+        elif feature_type=='protTrans@msa_transformer':
+            plm1_encoding = read_plm(os.path.join(feature_path, 'msaTrans/{}.npy'.format(self.seq_id)))
+            plm2_encoding = read_plm(os.path.join(feature_path, 'protTrans/{}.npy'.format(self.seq_id)))
+            self.seq_encoding = torch.cat((plm1_encoding.squeeze(0), plm2_encoding.squeeze(0)), dim=1)
+            self.seq_encoding = self.seq_encoding.unsqueeze(0)
 
     @property
     def data(self):
-        data = self.plm_encoding.mT.squeeze(0)
+        data = self.seq_encoding.mT.squeeze(0)
+        if self.data_transform is not None:
+            data = self.data_transform(data)
         return data.float()
 
     @property

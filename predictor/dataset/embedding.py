@@ -3,6 +3,10 @@ import os
 import numpy as np
 from dataset.utils import sequence_mapping
 
+####
+# 1. protTrans
+####
+
 device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
 def tokenizing(list_seq: list, tokenizer):
@@ -75,5 +79,54 @@ def get_PLM_embedding(list_seq: list, model, tokenizer) -> list[np.array]:
     
     # 4. remove paddings & special tokens
     embedded_seq = get_features_from_embedding(embedding, attention_mask)
+    
+    return embedded_seq
+
+#####
+# 2. Onehot
+#####
+def onehot_encoding(seq: str) -> np.array:
+    '''
+    param:
+        seq - str, input protein sequence
+    return:
+        encoding matrix - np.array, size: len_seq*21
+    '''
+    
+    # 20 Amino Acids and 1 others
+    amino_acids = ['A', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'K', 'L',
+                   'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'Y', 'X']
+
+    # Define the mapping of amino acids to indices, mapping abnormal amino acids to #
+    aa_to_index = {aa: i for i, aa in enumerate(amino_acids)}
+    
+    # Initialize an empty matrix for one-hot encoding
+    num_amino_acids = len(amino_acids)
+    encoding_matrix = np.zeros((len(seq), num_amino_acids))
+    
+    # Fill the matrix with one-hot encoded values
+    for i, aa in enumerate(seq):
+        if aa in aa_to_index: # 20 usual AAs
+            index = aa_to_index[aa]
+            encoding_matrix[i][index] = 1
+        # else: # abnormal AAs
+            # encoding_matrix[i][num_amino_acids-1] = 1    
+    return encoding_matrix
+    
+def get_onehot_embedding(list_seq: list) -> list[np.array]:
+    '''
+    Given a list of sequences, generate a list of onehot embedding of these sequences. 
+    
+    params:
+        list_seq - list of Uniprot sequences.
+        
+    return:
+        embedded_seq - list of embedded sequences (numpy arraies). Unequal lengths.
+    '''
+    # 1. map rarely Amino Acids to X
+    list_seq = sequence_mapping(list_seq)
+    
+    # 2. get all onehot embedding for the list of sequences
+    embedded_seq = [onehot_encoding(seq) for seq in list_seq]
     
     return embedded_seq

@@ -1,0 +1,10 @@
+11/01/2023 05:52:56 pm model_name: rnn_baseline_bi_test_all 
+                 num_params: 2611 
+                 best_epoch: 2 
+                 test_loss: 0.10181474504180443 
+                 max_auc: 0.636475047904702 
+                 netName: model.rnn_baseline_bi_test 
+                 batch_size: 50 
+                  train_epochs: 2 
+                 learning_rate: 5e-05 
+

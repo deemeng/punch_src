@@ -1,0 +1,30 @@
+10/06/2023 06:59:25 am model_name: rnn_L1H1_bi_all 
+                 num_params: 2057 
+                 best_epoch: 50 
+                 test_loss: 0.059489363065008356 
+                 max_auc: 0.883520017001747 
+                 netName: model.rnn_L1H1_bi 
+                 batch_size: 1 
+                  train_epochs: 50 
+                 learning_rate: 5e-05 
+
+10/06/2023 09:59:16 am model_name: rnn_L1H1_bi_all 
+                 num_params: 2057 
+                 best_epoch: 99 
+                 test_loss: 0.05886558488520165 
+                 max_auc: 0.8870812655559511 
+                 netName: model.rnn_L1H1_bi 
+                 batch_size: 1 
+                  train_epochs: 100 
+                 learning_rate: 5e-05 
+
+10/06/2023 09:10:45 pm model_name: rnn_L1H1_bi_all 
+                 num_params: 2057 
+                 best_epoch: 199 
+                 test_loss: 0.0587896993015012 
+                 max_auc: 0.8901536973848135 
+                 netName: model.rnn_L1H1_bi 
+                 batch_size: 1 
+                  train_epochs: 200 
+                 learning_rate: 5e-05 
+

@@ -23,7 +23,6 @@ def train(model, train_loader, optimizer, criterion, device, epoch):
     for batch_idx, (sequences, data, target) in enumerate(train_loader):
         data, target = data.to(device), target.to(device)
         output = model(data)
-        
         loss = get_loss(sequences, output, criterion)
         loss.backward()
         optimizer.step()
@@ -54,13 +53,10 @@ def test(model, test_loader, criterion, device):
     with torch.no_grad():
         for sequences, data, target in test_loader:
             data, target = data.to(device), target.to(device)
-            if paramH.transpose:
-                output = model(data.transpose(1, 2))
-            else:
-                output = model(data)
+            output = model(data)
             test_loss += get_loss(sequences, output, criterion).item()
 
-            pred = output[0].unsqueeze(1).cpu()
+            pred = output
             
             target, pred = get_targetPred(sequences, pred)
             all_pred = np.append(all_pred, pred)
@@ -77,9 +73,6 @@ def test(model, test_loader, criterion, device):
 def predict_one_sequence(model, sequence: Sequence, device):
     model.eval()
     data = sequence.data.reshape(1, paramH.n_features, -1).to(device)
-    if paramH.transpose:
-        output = model(data.transpose(1, 2))
-    else:
-        output = model(data)
+    output = model(data)
     _, output = trim_padding_and_flat([sequence], output)
     return output

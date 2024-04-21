@@ -1,0 +1,50 @@
+04/08/2024 12:01:35 am model_name: cnn2_L11_withFullyDisorder78_fold1 
+                     num_params: 142141 
+                     best_epoch: 59 
+                     test_loss: 0.03539247165293726 
+                     max_auc: 0.9519704487924746 
+                     netName: model.cnn2_L11 
+                     batch_size: 50 
+                      train_epochs: 60 
+                     learning_rate: 0.0001 
+
+04/08/2024 03:02:14 am model_name: cnn2_L11_withFullyDisorder78_fold2 
+                     num_params: 142141 
+                     best_epoch: 58 
+                     test_loss: 0.03624670881114594 
+                     max_auc: 0.9491658219367772 
+                     netName: model.cnn2_L11 
+                     batch_size: 50 
+                      train_epochs: 60 
+                     learning_rate: 0.0001 
+
+04/08/2024 06:03:24 am model_name: cnn2_L11_withFullyDisorder78_fold3 
+                     num_params: 142141 
+                     best_epoch: 53 
+                     test_loss: 0.035865293962447205 
+                     max_auc: 0.9509294251282927 
+                     netName: model.cnn2_L11 
+                     batch_size: 50 
+                      train_epochs: 60 
+                     learning_rate: 0.0001 
+
+04/08/2024 08:59:51 am model_name: cnn2_L11_withFullyDisorder78_fold4 
+                     num_params: 142141 
+                     best_epoch: 58 
+                     test_loss: 0.03488525222948663 
+                     max_auc: 0.9511044686183007 
+                     netName: model.cnn2_L11 
+                     batch_size: 50 
+                      train_epochs: 60 
+                     learning_rate: 0.0001 
+
+04/08/2024 11:40:11 am model_name: cnn2_L11_withFullyDisorder78_fold5 
+                     num_params: 142141 
+                     best_epoch: 60 
+                     test_loss: 0.03547739194808145 
+                     max_auc: 0.9512031517659932 
+                     netName: model.cnn2_L11 
+                     batch_size: 50 
+                      train_epochs: 60 
+                     learning_rate: 0.0001 
+

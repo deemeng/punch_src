@@ -1,0 +1,160 @@
+01/22/2024 08:03:29 pm model_name: cnn2_L11_all 
+                 num_params: 142141 
+                 best_epoch: 14 
+                 test_loss: 0.05510416971820016 
+                 max_auc: 0.92988552243477 
+                 netName: model.cnn2_L11 
+                 batch_size: 50 
+                  train_epochs: 14 
+                 learning_rate: 0.0001 
+
+01/23/2024 12:43:04 am model_name: cnn2_L11_all 
+                 num_params: 142141 
+                 best_epoch: 15 
+                 test_loss: 0.05552155159173473 
+                 max_auc: 0.9304609699277977 
+                 netName: model.cnn2_L11 
+                 batch_size: 50 
+                  train_epochs: 16 
+                 learning_rate: 0.0001 
+
+01/23/2024 12:45:52 am model_name: cnn2_L11_all 
+                 num_params: 142141 
+                 best_epoch: 18 
+                 test_loss: 0.055583224758025136 
+                 max_auc: 0.9305700248094039 
+                 netName: model.cnn2_L11 
+                 batch_size: 50 
+                  train_epochs: 18 
+                 learning_rate: 0.0001 
+
+01/28/2024 04:30:29 am model_name: cnn2_L11_all 
+                 num_params: 142141 
+                 best_epoch: 19 
+                 test_loss: 0.05507031695977334 
+                 max_auc: 0.9300934869174678 
+                 netName: model.cnn2_L11 
+                 batch_size: 50 
+                  train_epochs: 20 
+                 learning_rate: 0.0001 
+
+01/28/2024 08:51:06 pm model_name: cnn2_L11_all 
+                 num_params: 142141 
+                 best_epoch: 14 
+                 test_loss: 0.05550742627632233 
+                 max_auc: 0.9309240206066489 
+                 netName: model.cnn2_L11 
+                 batch_size: 50 
+                  train_epochs: 15 
+                 learning_rate: 0.0001 
+
+01/28/2024 09:06:40 pm model_name: cnn2_L11_all 
+                 num_params: 142141 
+                 best_epoch: 19 
+                 test_loss: 0.05524277307333485 
+                 max_auc: 0.9320007533803234 
+                 netName: model.cnn2_L11 
+                 batch_size: 50 
+                  train_epochs: 20 
+                 learning_rate: 0.0001 
+
+01/28/2024 09:24:47 pm model_name: cnn2_L11_all 
+                 num_params: 142141 
+                 best_epoch: 18 
+                 test_loss: 0.05573149443634095 
+                 max_auc: 0.9304072897484368 
+                 netName: model.cnn2_L11 
+                 batch_size: 50 
+                  train_epochs: 18 
+                 learning_rate: 0.0001 
+
+01/29/2024 01:58:28 am model_name: cnn2_L11_all 
+                 num_params: 142141 
+                 best_epoch: 20 
+                 test_loss: 0.055136726123671376 
+                 max_auc: 0.9308980575861091 
+                 netName: model.cnn2_L11 
+                 batch_size: 50 
+                  train_epochs: 20 
+                 learning_rate: 0.0001 
+
+01/29/2024 02:06:00 am model_name: cnn2_L11_all 
+                 num_params: 142141 
+                 best_epoch: 21 
+                 test_loss: 0.0562855479818198 
+                 max_auc: 0.9307953720980569 
+                 netName: model.cnn2_L11 
+                 batch_size: 50 
+                  train_epochs: 22 
+                 learning_rate: 0.0001 
+
+01/29/2024 02:24:34 am model_name: cnn2_L11_all 
+                 num_params: 142141 
+                 best_epoch: 18 
+                 test_loss: 0.055096128847329846 
+                 max_auc: 0.9314512062250706 
+                 netName: model.cnn2_L11 
+                 batch_size: 50 
+                  train_epochs: 20 
+                 learning_rate: 0.0001 
+
+01/29/2024 02:36:05 am model_name: cnn2_L11_all 
+                 num_params: 142141 
+                 best_epoch: 25 
+                 test_loss: 0.05520435334934342 
+                 max_auc: 0.9326021119830217 
+                 netName: model.cnn2_L11 
+                 batch_size: 50 
+                  train_epochs: 25 
+                 learning_rate: 0.0001 
+
+01/29/2024 02:47:28 am model_name: cnn2_L11_all 
+                 num_params: 142141 
+                 best_epoch: 27 
+                 test_loss: 0.05494949248048567 
+                 max_auc: 0.9329043540012208 
+                 netName: model.cnn2_L11 
+                 batch_size: 50 
+                  train_epochs: 27 
+                 learning_rate: 0.0001 
+
+01/29/2024 03:15:44 am model_name: cnn2_L11_all 
+                 num_params: 142141 
+                 best_epoch: 32 
+                 test_loss: 0.05554350225194808 
+                 max_auc: 0.93343622528789 
+                 netName: model.cnn2_L11 
+                 batch_size: 50 
+                  train_epochs: 33 
+                 learning_rate: 0.0001 
+
+01/29/2024 03:46:00 am model_name: cnn2_L11_all 
+                 num_params: 142141 
+                 best_epoch: 36 
+                 test_loss: 0.05637385905269653 
+                 max_auc: 0.9335006693492175 
+                 netName: model.cnn2_L11 
+                 batch_size: 50 
+                  train_epochs: 40 
+                 learning_rate: 0.0001 
+
+02/08/2024 10:39:55 pm model_name: cnn2_L11_all 
+                 num_params: 142141 
+                 best_epoch: 20 
+                 test_loss: 0.054834959581494334 
+                 max_auc: 0.9325273971957714 
+                 netName: model.cnn2_L11 
+                 batch_size: 50 
+                  train_epochs: 20 
+                 learning_rate: 0.0001 
+
+02/08/2024 11:39:27 pm model_name: cnn2_L11_all 
+                 num_params: 142141 
+                 best_epoch: 22 
+                 test_loss: 0.055268587258954845 
+                 max_auc: 0.9324375282926642 
+                 netName: model.cnn2_L11 
+                 batch_size: 50 
+                  train_epochs: 22 
+                 learning_rate: 0.0001 
+

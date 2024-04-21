@@ -1,0 +1,120 @@
+11/06/2023 05:27:01 am model_name: cbrcnn_stage1 
+                 num_params: 20501 
+                 best_epoch: 1 
+                 test_loss: 0.0979501796934085 
+                 max_auc: 0.7928269312673826 
+                 netName: model.cbrcnn_stage1 
+                 batch_size: 20 
+                  train_epochs: 1 
+                 learning_rate: 5e-05 
+
+11/06/2023 05:27:01 am model_name: cbrcnn_stage2 
+                 num_params: 5713 
+                 best_epoch: 1 
+                 test_loss: 0.10511102383144391 
+                 max_auc: 0.32110669956775684 
+                 netName: model.cbrcnn_stage2 
+                 batch_size: 20 
+                  train_epochs: 1 
+                 learning_rate: 5e-05 
+
+11/06/2023 05:32:08 am model_name: cbrcnn_stage1 
+                 num_params: 20501 
+                 best_epoch: 1 
+                 test_loss: 0.09664718177265082 
+                 max_auc: 0.7846757135788563 
+                 netName: model.cbrcnn_stage1 
+                 batch_size: 20 
+                  train_epochs: 1 
+                 learning_rate: 5e-05 
+
+11/06/2023 05:32:08 am model_name: cbrcnn_stage2 
+                 num_params: 5713 
+                 best_epoch: 1 
+                 test_loss: 0.10486409022257878 
+                 max_auc: 0.3431740002191941 
+                 netName: model.cbrcnn_stage2 
+                 batch_size: 20 
+                  train_epochs: 1 
+                 learning_rate: 5e-05 
+
+11/06/2023 05:33:41 am model_name: cbrcnn_stage1 
+                 num_params: 20501 
+                 best_epoch: 1 
+                 test_loss: 0.09321671436325862 
+                 max_auc: 0.8015840539629789 
+                 netName: model.cbrcnn_stage1 
+                 batch_size: 20 
+                  train_epochs: 1 
+                 learning_rate: 5e-05 
+
+11/06/2023 05:33:41 am model_name: cbrcnn_stage2 
+                 num_params: 5713 
+                 best_epoch: 1 
+                 test_loss: 0.10411886005447461 
+                 max_auc: 0.29945062217484403 
+                 netName: model.cbrcnn_stage2 
+                 batch_size: 20 
+                  train_epochs: 1 
+                 learning_rate: 5e-05 
+
+11/06/2023 07:51:08 am model_name: cbrcnn_stage1 
+                 num_params: 20501 
+                 best_epoch: 198 
+                 test_loss: 0.06502493427445491 
+                 max_auc: 0.8950193262618457 
+                 netName: model.cbrcnn_stage1 
+                 batch_size: 20 
+                  train_epochs: 200 
+                 learning_rate: 5e-05 
+
+11/06/2023 07:51:08 am model_name: cbrcnn_stage2 
+                 num_params: 5713 
+                 best_epoch: 198 
+                 test_loss: 0.06504881798456877 
+                 max_auc: 0.8959749681558044 
+                 netName: model.cbrcnn_stage2 
+                 batch_size: 20 
+                  train_epochs: 200 
+                 learning_rate: 5e-05 
+
+11/06/2023 10:35:07 pm model_name: cbrcnn_stage1 
+                 num_params: 20501 
+                 best_epoch: 393 
+                 test_loss: 0.06431729527047048 
+                 max_auc: 0.8968050505650572 
+                 netName: model.cbrcnn_stage1 
+                 batch_size: 20 
+                  train_epochs: 400 
+                 learning_rate: 5e-05 
+
+11/06/2023 10:35:07 pm model_name: cbrcnn_stage2 
+                 num_params: 5713 
+                 best_epoch: 305 
+                 test_loss: 0.06455212711619261 
+                 max_auc: 0.8974677721043008 
+                 netName: model.cbrcnn_stage2 
+                 batch_size: 20 
+                  train_epochs: 400 
+                 learning_rate: 5e-05 
+
+11/07/2023 01:14:04 am model_name: cbrcnn_stage1 
+                 num_params: 100661 
+                 best_epoch: 70 
+                 test_loss: 0.056077148063251606 
+                 max_auc: 0.9253757788200454 
+                 netName: model.cbrcnn_stage1 
+                 batch_size: 20 
+                  train_epochs: 100 
+                 learning_rate: 5e-05 
+
+11/07/2023 01:14:04 am model_name: cbrcnn_stage2 
+                 num_params: 5713 
+                 best_epoch: 55 
+                 test_loss: 0.05530733136125864 
+                 max_auc: 0.925613788162916 
+                 netName: model.cbrcnn_stage2 
+                 batch_size: 20 
+                  train_epochs: 100 
+                 learning_rate: 5e-05 
+

@@ -1,0 +1,20 @@
+11/13/2023 04:56:09 am model_name: rnn_biL2H25_all 
+                 num_params: 6351 
+                 best_epoch: 194 
+                 test_loss: 0.06601976612344002 
+                 max_auc: 0.8937222752817963 
+                 netName: model.rnn_biL2H25 
+                 batch_size: 20 
+                  train_epochs: 200 
+                 learning_rate: 5e-05 
+
+11/14/2023 04:59:51 am model_name: rnn_biL2H25_all 
+                 num_params: 6351 
+                 best_epoch: 295 
+                 test_loss: 0.06483753752440978 
+                 max_auc: 0.896182946890889 
+                 netName: model.rnn_biL2H25 
+                 batch_size: 20 
+                  train_epochs: 300 
+                 learning_rate: 5e-05 
+

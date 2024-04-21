@@ -1,7 +1,7 @@
 import torch
 import os
 import numpy as np
-from utils.sequence import sequence_mapping
+from utils.sequence import sequence_mapping_list
 from utils.file import save_np
 
 device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
@@ -61,12 +61,12 @@ def get_PLM_embedding(list_seq: list, model, tokenizer) -> list[np.array]:
         embedded_seq - list of embedded sequences (numpy arraies). Unequal lengths.
     '''
     # 1. map rarely Amino Acids to X
-    list_seq = sequence_mapping(list_seq)
+    list_seq = sequence_mapping_list(list_seq)
     
     # 2. tokenize the sequences
     ids = tokenizing(list_seq, tokenizer)
     input_ids = torch.tensor(ids['input_ids']).to(device) # input databatch
-    attention_mask = torch.tensor(ids['attention_mask']) # mask padding regions
+    attention_mask = torch.tensor(ids['attention_mask']).to(device) # mask padding regions
     
     # 3. embedding
     with torch.no_grad():

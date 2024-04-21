@@ -1,0 +1,10 @@
+11/02/2023 09:35:49 pm model_name: cnn3_L11_all 
+                 num_params: 46641 
+                 best_epoch: 95 
+                 test_loss: 0.06175143728510309 
+                 max_auc: 0.8987610338918672 
+                 netName: model.cnn3_L11 
+                 batch_size: 20 
+                  train_epochs: 100 
+                 learning_rate: 5e-05 
+

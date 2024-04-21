@@ -1,0 +1,9 @@
+12/14/2023 08:01:47 pm model_name: cnn2_L11_withFullyDisorder 
+                 num_params: 180541 
+                 best_epoch: -1 
+                 max_auc: -1 
+                 netName: model.cnn2_L11 
+                 batch_size: 50 
+                  train_epochs: 15 
+                 learning_rate: 0.0001 
+

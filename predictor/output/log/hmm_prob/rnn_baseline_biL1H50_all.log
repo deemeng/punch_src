@@ -1,0 +1,20 @@
+10/29/2023 06:32:24 pm model_name: rnn_baseline_biL1H50_all 
+                 num_params: 7501 
+                 best_epoch: 100 
+                 test_loss: 0.06582420520483011 
+                 max_auc: 0.889890202475426 
+                 netName: model.rnn_baseline_biL1H50 
+                 batch_size: 1 
+                  train_epochs: 100 
+                 learning_rate: 5e-05 
+
+10/30/2023 12:17:02 am model_name: rnn_baseline_biL1H50_all 
+                 num_params: 7501 
+                 best_epoch: 195 
+                 test_loss: 0.063928631054507 
+                 max_auc: 0.896808568722233 
+                 netName: model.rnn_baseline_biL1H50 
+                 batch_size: 1 
+                  train_epochs: 200 
+                 learning_rate: 5e-05 
+

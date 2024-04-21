@@ -1,0 +1,20 @@
+10/06/2023 08:42:20 am model_name: lstm_L1H1_bi_all 
+                 num_params: 8219 
+                 best_epoch: 100 
+                 test_loss: 0.05736044576375369 
+                 max_auc: 0.8940383339886363 
+                 netName: model.lstm_L1H1_bi 
+                 batch_size: 1 
+                  train_epochs: 100 
+                 learning_rate: 5e-05 
+
+10/06/2023 11:59:59 pm model_name: lstm_L1H1_bi_all 
+                 num_params: 8219 
+                 best_epoch: 200 
+                 test_loss: 0.05780343754251374 
+                 max_auc: 0.8971039493220712 
+                 netName: model.lstm_L1H1_bi 
+                 batch_size: 1 
+                  train_epochs: 200 
+                 learning_rate: 5e-05 
+

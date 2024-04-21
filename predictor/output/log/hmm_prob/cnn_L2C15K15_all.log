@@ -1,0 +1,20 @@
+10/29/2023 06:20:39 pm model_name: cnn_L2C15K15_all 
+                 num_params: 4981 
+                 best_epoch: 97 
+                 test_loss: 0.06919595887118629 
+                 max_auc: 0.8816320932364673 
+                 netName: model.cnn_L2C15K15 
+                 batch_size: 1 
+                  train_epochs: 100 
+                 learning_rate: 5e-05 
+
+10/29/2023 11:54:07 pm model_name: cnn_L2C15K15_all 
+                 num_params: 4981 
+                 best_epoch: 152 
+                 test_loss: 0.06868378168805737 
+                 max_auc: 0.88252042209153 
+                 netName: model.cnn_L2C15K15 
+                 batch_size: 1 
+                  train_epochs: 200 
+                 learning_rate: 5e-05 
+

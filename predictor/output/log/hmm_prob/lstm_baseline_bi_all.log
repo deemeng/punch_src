@@ -1,0 +1,10 @@
+11/03/2023 01:18:19 am model_name: lstm_baseline_bi_all 
+                 num_params: 203 
+                 best_epoch: 100 
+                 test_loss: 0.08140891031959117 
+                 max_auc: 0.8586295756491386 
+                 netName: model.lstm_baseline_bi 
+                 batch_size: 20 
+                  train_epochs: 100 
+                 learning_rate: 5e-05 
+

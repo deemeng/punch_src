@@ -1,0 +1,30 @@
+02/29/2024 05:28:16 am model_name: cnn2_L12_withFullyDisorder78_fold1 
+                     num_params: 36111 
+                     best_epoch: 113 
+                     test_loss: 0.04366111579728588 
+                     max_auc: 0.878740107129105 
+                     netName: model.cnn2_L12 
+                     batch_size: 50 
+                      train_epochs: 150 
+                     learning_rate: 0.0001 
+
+02/29/2024 07:18:25 am model_name: cnn2_L12_withFullyDisorder78_fold2 
+                     num_params: 36111 
+                     best_epoch: 146 
+                     test_loss: 0.04290711350967081 
+                     max_auc: 0.8780150931766324 
+                     netName: model.cnn2_L12 
+                     batch_size: 50 
+                      train_epochs: 150 
+                     learning_rate: 0.0001 
+
+02/29/2024 09:04:28 am model_name: cnn2_L12_withFullyDisorder78_fold3 
+                     num_params: 36111 
+                     best_epoch: 143 
+                     test_loss: 0.04366885307720121 
+                     max_auc: 0.884199592623578 
+                     netName: model.cnn2_L12 
+                     batch_size: 50 
+                      train_epochs: 150 
+                     learning_rate: 0.0001 
+

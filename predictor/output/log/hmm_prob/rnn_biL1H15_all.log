@@ -1,0 +1,30 @@
+11/03/2023 06:18:44 am model_name: rnn_biL1H15_all 
+                 num_params: 1201 
+                 best_epoch: 100 
+                 test_loss: 0.07281839694732274 
+                 max_auc: 0.8788809417784005 
+                 netName: model.rnn_biL1H15 
+                 batch_size: 20 
+                  train_epochs: 100 
+                 learning_rate: 5e-05 
+
+11/04/2023 06:10:20 am model_name: rnn_biL1H15_all 
+                 num_params: 1201 
+                 best_epoch: 197 
+                 test_loss: 0.07063752511181892 
+                 max_auc: 0.8830901753556349 
+                 netName: model.rnn_biL1H15 
+                 batch_size: 20 
+                  train_epochs: 200 
+                 learning_rate: 5e-05 
+
+11/12/2023 10:29:03 pm model_name: rnn_biL1H15_all 
+                 num_params: 1201 
+                 best_epoch: 297 
+                 test_loss: 0.06869919252319213 
+                 max_auc: 0.885924102627708 
+                 netName: model.rnn_biL1H15 
+                 batch_size: 20 
+                  train_epochs: 300 
+                 learning_rate: 5e-05 
+

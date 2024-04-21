@@ -1,7 +1,7 @@
 import torch
 import os
 import numpy as np
-from utils.sequence import sequence_mapping
+from utils.sequence import sequence_mapping_list
 from utils.file import save_np
 
 device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
@@ -45,7 +45,7 @@ def get_onehot_embedding(list_seq: list) -> list[np.array]:
         embedded_seq - list of embedded sequences (numpy arraies). Unequal lengths.
     '''
     # 1. map rarely Amino Acids to X
-    list_seq = sequence_mapping(list_seq)
+    list_seq = sequence_mapping_list(list_seq)
     
     # 2. get all onehot embedding for the list of sequences
     embedded_seq = [onehot_encoding(seq) for seq in list_seq]

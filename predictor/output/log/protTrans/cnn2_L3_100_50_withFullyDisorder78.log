@@ -1,0 +1,50 @@
+04/10/2024 01:44:07 am model_name: cnn2_L3_100_50_withFullyDisorder78_fold1 
+                     num_params: 339871 
+                     best_epoch: 10 
+                     test_loss: 0.032910843502919555 
+                     max_auc: 0.9485058012153184 
+                     netName: model.cnn2_L3_100_50 
+                     batch_size: 50 
+                      train_epochs: 10 
+                     learning_rate: 0.0001 
+
+04/10/2024 03:00:04 am model_name: cnn2_L3_100_50_withFullyDisorder78_fold2 
+                     num_params: 339871 
+                     best_epoch: 10 
+                     test_loss: 0.03239937965460375 
+                     max_auc: 0.9516990196495045 
+                     netName: model.cnn2_L3_100_50 
+                     batch_size: 50 
+                      train_epochs: 10 
+                     learning_rate: 0.0001 
+
+04/10/2024 04:11:27 am model_name: cnn2_L3_100_50_withFullyDisorder78_fold3 
+                     num_params: 339871 
+                     best_epoch: 10 
+                     test_loss: 0.03275266582412379 
+                     max_auc: 0.9464106329071232 
+                     netName: model.cnn2_L3_100_50 
+                     batch_size: 50 
+                      train_epochs: 10 
+                     learning_rate: 0.0001 
+
+04/10/2024 05:22:30 am model_name: cnn2_L3_100_50_withFullyDisorder78_fold4 
+                     num_params: 339871 
+                     best_epoch: 10 
+                     test_loss: 0.03166983758422489 
+                     max_auc: 0.9510906103243811 
+                     netName: model.cnn2_L3_100_50 
+                     batch_size: 50 
+                      train_epochs: 10 
+                     learning_rate: 0.0001 
+
+04/10/2024 06:33:31 am model_name: cnn2_L3_100_50_withFullyDisorder78_fold5 
+                     num_params: 339871 
+                     best_epoch: 10 
+                     test_loss: 0.032338254058695566 
+                     max_auc: 0.954676198367331 
+                     netName: model.cnn2_L3_100_50 
+                     batch_size: 50 
+                      train_epochs: 10 
+                     learning_rate: 0.0001 
+

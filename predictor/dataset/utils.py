@@ -21,10 +21,14 @@ class PadRightTo(object):
         padding = self.output_size - sample.size()[-1]
         return torch.nn.functional.pad(sample, (0, padding), 'constant', 0)
 
-def read_plm(plm_path):
+def read_plm(plm_path, start_token=False, end_token=False):
     plm = load_np(plm_path)
     # plm = plm.dropna().astype(np.float32)
     plm = torch.tensor(plm, dtype=torch.float32)
+    if start_token:
+        plm = plm[1:]
+    if end_token:
+        plm = plm[:-1]
     return plm
 
 def parse_target(target):

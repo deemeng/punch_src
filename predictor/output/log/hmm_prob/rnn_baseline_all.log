@@ -1,0 +1,30 @@
+10/27/2023 09:38:31 pm model_name: rnn_baseline_all 
+                 num_params: 27 
+                 best_epoch: 22 
+                 test_loss: 0.08347290283057586 
+                 max_auc: 0.8398861917880681 
+                 netName: model.rnn_baseline 
+                 batch_size: 1 
+                  train_epochs: 100 
+                 learning_rate: 5e-05 
+
+10/28/2023 11:19:36 pm model_name: rnn_baseline_all 
+                 num_params: 27 
+                 best_epoch: 101 
+                 test_loss: 0.0825229053677357 
+                 max_auc: 0.8351437221147988 
+                 netName: model.rnn_baseline 
+                 batch_size: 1 
+                  train_epochs: 200 
+                 learning_rate: 5e-05 
+
+11/03/2023 05:52:51 am model_name: rnn_baseline_all 
+                 num_params: 27 
+                 best_epoch: 100 
+                 test_loss: 0.08423455021320245 
+                 max_auc: 0.8376022797996885 
+                 netName: model.rnn_baseline 
+                 batch_size: 20 
+                  train_epochs: 100 
+                 learning_rate: 5e-05 
+

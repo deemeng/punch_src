@@ -1,0 +1,20 @@
+11/03/2023 06:21:59 am model_name: lstm_biL1H15_all 
+                 num_params: 4711 
+                 best_epoch: 99 
+                 test_loss: 0.07143869939236305 
+                 max_auc: 0.8799734644746481 
+                 netName: model.lstm_biL1H15 
+                 batch_size: 20 
+                  train_epochs: 100 
+                 learning_rate: 5e-05 
+
+11/04/2023 06:09:49 am model_name: lstm_biL1H15_all 
+                 num_params: 4711 
+                 best_epoch: 188 
+                 test_loss: 0.06965541242597958 
+                 max_auc: 0.8856268223749304 
+                 netName: model.lstm_biL1H15 
+                 batch_size: 20 
+                  train_epochs: 200 
+                 learning_rate: 5e-05 
+

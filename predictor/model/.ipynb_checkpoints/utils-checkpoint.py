@@ -16,25 +16,15 @@ import params.filePath as paramF
 import params.hyperparams as paramH
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-'''
+
 def trim_padding_and_flat(sequences: List[Sequence], pred):
     all_target = np.array([])
     all_trimmed_pred = np.array([])
     for i, seq in enumerate(sequences):
-        # tmp_pred = pred[i][:len(seq)].cpu().detach().numpy()
-        tmp_pred = pred[i].cpu().detach().numpy()
+        tmp_pred = pred[i][:len(seq)].cpu().detach().numpy()
+        # tmp_pred = pred[i].cpu().detach().numpy()
         all_target = np.concatenate([all_target, seq.clean_target])
-        all_trimmed_pred = np.concatenate([all_trimmed_pred, tmp_pred[0]])
-    return all_target, all_trimmed_pred
-'''
-def trim_padding_and_flat(sequences: List[Sequence], pred):
-    all_target = np.array([])
-    all_trimmed_pred = np.array([])
-    for i, seq in enumerate(sequences):
-        # tmp_pred = pred[i][:len(seq)].cpu().detach().numpy()
-        all_target = np.concatenate([all_target, seq.clean_target])
-        # all_trimmed_pred = np.concatenate([all_trimmed_pred, tmp_pred])
-    all_trimmed_pred = pred.cpu().detach().numpy()
+        all_trimmed_pred = np.concatenate([all_trimmed_pred, tmp_pred])
     return all_target, all_trimmed_pred
 
 def concat_target_and_output(sequences: List[Sequence], pred):
@@ -62,11 +52,6 @@ def batch_auc(target, pred):
     return:
         auc - float, auc score.
     '''
-    # print(f'target: \n{target}')
-    # print(f'pred: \n{pred}')
-    print(target.shape)
-    print(pred.shape)
-    
     fpr, tpr, thresholds = metrics.roc_curve(target, pred, pos_label=1)
     auc = metrics.auc(fpr, tpr)
     return auc
@@ -130,6 +115,7 @@ def plot_auc_and_loss(train_losses, test_losses, test_aucs, epoch, title="AUC an
     # plt.show()
     return fig
 
+## not using
 def plot_roc_curve_rnn(model, data_loader, device, setType='Test'):
     model.eval()
     
@@ -173,10 +159,7 @@ def plot_roc_curve(model, data_loader, device, setType='Test'):
         for sequences, data, target in data_loader:
             data, target = data.to(device), target.to(device)
             
-            if paramH.transpose:
-                output = model(data.transpose(1, 2)).cpu()
-            else:
-                output = model(data).cpu()
+            output = model(data).cpu()
 
             if paramH.padding:
                 target, output = trim_padding_and_flat(sequences, output)
@@ -187,6 +170,14 @@ def plot_roc_curve(model, data_loader, device, setType='Test'):
 
     fpr, tpr, thresholds = metrics.roc_curve(all_target, all_output, pos_label=1)
     auc = metrics.auc(fpr, tpr)
+
+    # plot
+    plot_title = f'{paramH.model_name}: ROC Curve for {setType} Set'
+    file_path = f'{paramF.plots_dir}{paramH.model_name}_{setType}_ROC_curve.png'
+    fig = plot_auc(fpr, tpr, auc, plot_title, file_path, setType)
+    return fig
+
+def plot_auc(fpr, tpr, auc, plot_title, file_path, setType='Test'):
     fig, ax = plt.subplots(figsize=(8, 8))
     r = np.linspace(0, 1, 1000)
     fs = np.mean(np.array(np.meshgrid(r, r)).T.reshape(-1, 2), axis=1).reshape(1000, 1000)
@@ -198,11 +189,10 @@ def plot_roc_curve(model, data_loader, device, setType='Test'):
     ax.set_xlabel("FPR", fontsize=20)
     ax.set_ylabel("TPR", fontsize=20)
     plt.legend(loc='lower right', fontsize=20)
-    plt.title(f'{paramH.model_name}: ROC Curve for {setType} Set', fontsize=20)
+    plt.title(plot_title, fontsize=20)
     plt.rcParams['font.size'] = 20
-    plt.savefig(f'{paramF.plots_dir}{paramH.model_name}_{setType}_ROC_curve.png')
+    plt.savefig(file_path)
     # plt.show()
-    
     return fig
 
 # To get the loss we cut the output and target to the length of the sequence, removing the padding.
@@ -211,9 +201,9 @@ def get_loss(sequences, output, criterion) -> torch.Tensor:
     loss = 0.0
     # Cycle through the sequences and accumulate the loss, removing the padding
     for i, seq in enumerate(sequences):
-        # seq_loss = criterion(output[i][:len(seq)], torch.tensor(seq.clean_target, device=device, dtype=torch.float))
+        seq_loss = criterion(output[i][:len(seq)], torch.tensor(seq.clean_target, device=device, dtype=torch.float))
         # print(output)
-        seq_loss = criterion(output[i], torch.tensor(seq.clean_target, device=device, dtype=torch.float))
+        # seq_loss = criterion(output[i], torch.tensor(seq.clean_target, device=device, dtype=torch.float))
         loss += seq_loss
     # Return the average loss over the sequences of the batch
     return loss / len(sequences)
@@ -236,6 +226,13 @@ def save_checkpoint(net, optimizer, Loss, EPOCH, PATH):
                 'optimizer_state_dict': optimizer.state_dict(),
                 'loss': Loss,
                 }, PATH)
+
+def save_model(net, optimizer, EPOCH, PATH):
+    torch.save({
+                'epoch': EPOCH,
+                'model_state_dict': net.state_dict(),
+                'optimizer_state_dict': optimizer.state_dict(),
+                }, PATH)
     
 def load_checkpoint(net, optimizer, PATH):
     # Note: Input model & optimizer should be pre-defined.  This routine only updates their states.
@@ -254,6 +251,23 @@ def load_checkpoint(net, optimizer, PATH):
         print("=> no checkpoint found at '{}'".format(PATH))
 
     return net, optimizer, start_epoch, losslogger
+
+def load_model(net, optimizer, PATH):
+    # Note: Input model & optimizer should be pre-defined.  This routine only updates their states.
+    start_epoch = 0
+    if os.path.isfile(PATH):
+        print("=> loading checkpoint '{}'".format(PATH))
+        checkpoint = torch.load(PATH)
+        start_epoch = checkpoint['epoch']
+        net.load_state_dict(checkpoint['model_state_dict'])
+        optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
+        
+        print("=> (epoch {})"
+                  .format(checkpoint['epoch']))
+    else:
+        print("=> no checkpoint found at '{}'".format(PATH))
+
+    return net, optimizer, start_epoch
 
 def count_modelParams(net):
     '''
